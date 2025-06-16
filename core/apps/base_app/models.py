@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
 class BaseModel(models.Model):
     id = models.UUIDField(
         verbose_name=_("ID"),
-        default=uuid.uuid4(), editable=False, primary_key=True
+        default=uuid.uuid4, editable=False, primary_key=True
     )
 
     created_at = models.DateTimeField(
