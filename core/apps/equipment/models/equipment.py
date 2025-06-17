@@ -1,6 +1,7 @@
-from core.apps.base_app.models import BaseModel
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+
+from core.apps.base_app.models import BaseModel
 
 
 class Equipment(BaseModel):
@@ -12,7 +13,10 @@ class Equipment(BaseModel):
     icon = models.ImageField(
         verbose_name='Иконка', upload_to='equipment/icons/', null=True, blank=True)
     price = models.IntegerField(verbose_name=_("Цена"))
-    equipment_type = models.ManyToManyField("equipment.EquipmentType", related_name='equipment_types')
+    equipment_type = models.ManyToManyField("equipment.EquipmentType", related_name='equipment_types',
+                                            verbose_name=_("Тип снаряжения"))
+    recipe_items = models.ManyToManyField('self',  related_name='recipe_items', verbose_name=_("Рецепт"),
+                                          help_text='Элементы из которых сделан предмет')
 
     def __str__(self):
         return self.name
