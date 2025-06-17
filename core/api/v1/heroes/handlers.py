@@ -1,9 +1,9 @@
 from ninja import Router
 from django.http import HttpRequest
 
-router = Router(tags=['Emblems'])
+router = Router(tags=['Heroes'])
 
 
 @router.get('/')
-def get_emblems_list(request: HttpRequest):
+def get_heroes_list(request: HttpRequest):
     return []
