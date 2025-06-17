@@ -12,3 +12,12 @@ class Equipment(BaseModel):
     icon = models.ImageField(
         verbose_name='Иконка', upload_to='equipment/icons/', null=True, blank=True)
     price = models.IntegerField(verbose_name=_("Цена"))
+    equipment_type = models.ManyToManyField("equipment.EquipmentType", related_name='equipment_types')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _("Снаряжение")
+        verbose_name_plural = _("Снаряжения")
+

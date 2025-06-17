@@ -26,7 +26,8 @@ INSTALLED_APPS = [
 
     # first party
     'core.apps.roles.apps.RolesConfig',
-    'core.apps.emblems.apps.EmblemsConfig'
+    'core.apps.emblems.apps.EmblemsConfig',
+    'core.apps.equipment.apps.EquipmentConfig'
 ]
 
 MIDDLEWARE = [
