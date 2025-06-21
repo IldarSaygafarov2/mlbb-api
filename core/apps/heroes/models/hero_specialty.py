@@ -9,6 +9,9 @@ class HeroSpecialty(BaseModel):
     )
     description = models.TextField(verbose_name=_("Описание специализации"), blank=True)
 
+    def to_entity(self):
+        pass
+
     def __str__(self):
         return self.name
 
